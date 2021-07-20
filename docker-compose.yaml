@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ea-im-incident-form-web:
+    build:
+      context: .
+      target: production
+    image: ea-im-incident-form-web
+    container_name: ea-im-incident-form-web
+    environment: {}

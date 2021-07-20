@@ -1,0 +1,38 @@
+environment: development
+name: ea-im-incident-form-web
+namespace: ea-im
+workstream: ea-im
+image: ea-im-incident-form-web
+
+labels: {}
+
+containerConfigMap:
+  name: ea-im-incident-form-web-config-map
+
+deployment:
+  restartPolicy: Always
+  priorityClassName: default
+  replicas: 1
+  minReadySeconds: 0
+
+container:
+  imagePullPolicy: IfNotPresent
+  requestMemory: 10Mi
+  requestCpu: 10m
+  limitMemory: 40Mi
+  limitCpu: 40m
+  port: 3000
+
+livenessProbe:
+  path: /healthz
+  port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  path: /healthy
+  port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3

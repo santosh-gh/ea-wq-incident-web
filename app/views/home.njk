@@ -1,0 +1,38 @@
+{% extends "_layout.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Walleys Quarry - Report an Incident</h1>
+
+      <p class="govuk-body">Use this example service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Register a complaint about Walleys Quarry</li>
+      </ul>
+
+      <p class="govuk-body">Registering takes around 5 minutes.</p>
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+        href: "/complaint/name",
+        isStartButton: true,
+        text: "Start new complaint"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
