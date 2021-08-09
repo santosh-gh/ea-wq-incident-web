@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  ea-im-incident-form-web:
+  ea-wq-incident-web:
     build:
       context: .
       target: production
-    image: ea-im-incident-form-web
-    container_name: ea-im-incident-form-web
+    image: ea-wq-incident-web
+    container_name: ea-wq-incident-web
     environment:
       PORT: ${PORT}
       NODE_ENV: ${NODE_ENV}

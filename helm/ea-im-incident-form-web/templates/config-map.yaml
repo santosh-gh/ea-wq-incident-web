@@ -1,5 +1,5 @@
-{{- include "ffc-helm-library.container-config-map" (list . "ea-im-incident-form-web.config-map") -}}
-{{- define "ea-im-incident-form-web.config-map" -}}
+{{- include "ffc-helm-library.container-config-map" (list . "ea-wq-incident-web.config-map") -}}
+{{- define "ea-wq-incident-web.config-map" -}}
 data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}

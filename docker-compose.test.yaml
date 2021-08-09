@@ -4,11 +4,11 @@ version: '3.8'
 # that test output is saved to the host
 
 services:
-  ea-im-incident-form-web:
+  ea-wq-incident-web:
     build:
       target: development
-    image: ea-im-incident-form-web-development
-    container_name: ea-im-incident-form-web-test
+    image: ea-wq-incident-web-development
+    container_name: ea-wq-incident-web-test
     command: npm run test
     volumes:
       - ./app/:/home/node/app/

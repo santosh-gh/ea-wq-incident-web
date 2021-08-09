@@ -1,13 +1,13 @@
 environment: development
-name: ea-im-incident-form-web
+name: ea-wq-incident-web
 namespace: ea-im
 workstream: ea-im
-image: ea-im-incident-form-web
+image: ea-wq-incident-web
 
 labels: {}
 
 containerConfigMap:
-  name: ea-im-incident-form-web-config-map
+  name: ea-wq-incident-web-config-map
 
 deployment:
   restartPolicy: Always

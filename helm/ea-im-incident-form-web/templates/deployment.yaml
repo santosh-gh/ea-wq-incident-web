@@ -1,8 +1,8 @@
-{{- include "ffc-helm-library.deployment" (list . "ea-im-incident-form-web.deployment") -}}
-{{- define "ea-im-incident-form-web.deployment" -}}
+{{- include "ffc-helm-library.deployment" (list . "ea-wq-incident-web.deployment") -}}
+{{- define "ea-wq-incident-web.deployment" -}}
 spec:
   template:
     spec:
       containers:
-      - {{ include "ffc-helm-library.container" (list . "ea-im-incident-form-web.container") }}
+      - {{ include "ffc-helm-library.container" (list . "ea-wq-incident-web.container") }}
 {{- end -}}

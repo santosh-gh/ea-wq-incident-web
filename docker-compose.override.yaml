@@ -4,11 +4,11 @@ version: '3.8'
 # to provide dependencies and expose ports for local testing
 
 services:
-  ea-im-incident-form-web:
+  ea-wq-incident-web:
     build:
       target: development
-    image: ea-im-incident-form-web-development
-    container_name: ea-im-incident-form-web-development
+    image: ea-wq-incident-web-development
+    container_name: ea-wq-incident-web-development
     ports:
       - "3000:3000"
       - "9229:9229"
