@@ -7,4 +7,14 @@ services:
       target: production
     image: ea-im-incident-form-web
     container_name: ea-im-incident-form-web
-    environment: {}
+    environment:
+      PORT: ${PORT}
+      NODE_ENV: ${NODE_ENV}
+      # REDIS_HOSTNAME: ${REDIS_HOSTNAME}
+      # REDIS_PORT: ${REDIS_PORT}
+      # REDIS_PASSWORD: ${REDIS_PASSWORD}
+      # REDIS_PARTITION: ${REDIS_PARTITION}
+      COOKIE_PASSWORD: ${COOKIE_PASSWORD}
+      SESSION_TIMEOUT_IN_MINUTES: ${SESSION_TIMEOUT_IN_MINUTES}
+      STATIC_CACHE_TIMEOUT_IN_MILLIS: ${STATIC_CACHE_TIMEOUT_IN_MILLIS}
+      COOKIE_TTL_IN_MILLIS: ${COOKIE_TTL_IN_MILLIS}
