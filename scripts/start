@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-# if [ -z "$(docker network ls --filter name=^ffc-sfi$ --format={{.Name}})" ]; then
-#   echo "Creating ffc-sfi Docker network"
-#   docker network create ffc-sfi
-# fi
+if [ -z "$(docker network ls --filter name=^ffc-wq$ --format={{.Name}})" ]; then
+  echo "Creating ffc-wq Docker network"
+  docker network create ffc-wq
+fi
 
 set -e
 projectRoot="$(a="/$0"; a=${a%/*}; a=${a:-.}; a=${a#/}/; cd "$a/.." || return; pwd)"

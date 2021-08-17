@@ -1,4 +1,4 @@
-describe('Experience test', () => {
+describe('Location test', () => {
   let createServer
   let server
 
@@ -11,10 +11,10 @@ describe('Experience test', () => {
     await server.initialize()
   })
 
-  test('GET /complaint/experience route returns 200', async () => {
+  test('GET /where-is-the-smell route returns 200', async () => {
     const options = {
       method: 'GET',
-      url: '/complaint/experience'
+      url: '/where-is-the-smell'
     }
 
     const response = await server.inject(options)
