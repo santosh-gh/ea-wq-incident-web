@@ -36,8 +36,8 @@ module.exports = {
       appVersion: version,
       assetPath: '/static',
       govukAssetPath: '/assets',
-      serviceName: 'Environment Agency Incident Form',
-      pageTitle: 'Walleys Quarry - GOV.UK',
+      serviceName: 'Walleys Quarry Incident Form',
+      pageTitle: 'Walleys Quarry Incident Form - GOV.UK',
       googleTagManagerKey: config.googleTagManagerKey
     }
   }

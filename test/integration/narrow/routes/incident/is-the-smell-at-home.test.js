@@ -1,4 +1,4 @@
-describe('Address test', () => {
+describe('Feedback test', () => {
   let createServer
   let server
 
@@ -11,10 +11,10 @@ describe('Address test', () => {
     await server.initialize()
   })
 
-  test('GET /complaint/address route returns 200', async () => {
+  test('GET /is-the-smell-at-home route returns 200', async () => {
     const options = {
       method: 'GET',
-      url: '/complaint/address'
+      url: '/is-the-smell-at-home'
     }
 
     const response = await server.inject(options)

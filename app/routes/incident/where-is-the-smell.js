@@ -3,17 +3,17 @@ const sessionHandler = require('../../services/session-handler')
 module.exports = [
   {
     method: ['GET', 'POST'],
-    path: '/complaint/experience',
+    path: '/where-is-the-smell',
     handler: {
       'hapi-govuk-question-page': {
         getConfig: () => {
           return {
-            $VIEW$: { serviceName: 'Environment Agency Incident Form' }
+            $PAGE$: { title: 'Where is the smell' }
           }
         },
         getData: (request) => sessionHandler.get(request, 'complaint'),
-        getNextPath: () => './location',
-        pageDefinition: require('./page-definitions/experience')
+        getNextPath: () => './details-of-the-smell',
+        pageDefinition: require('./page-definitions/where-is-the-smell')
       }
     },
     options: require('./question-page-options')
