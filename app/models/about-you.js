@@ -10,7 +10,7 @@ const LAST_NAME_LABEL = 'Last name'
 const LAST_NAME_LENGTH = 60
 
 const ADDRESS_LINE_1_KEY = 'addressLine1'
-const ADDRESS_LINE_1_LABEL = 'House name or number'
+const ADDRESS_LINE_1_LABEL = 'Address line 1'
 const ADDRESS_LINE_1_LENGTH = 255
 
 const ADDRESS_LINE_2_KEY = 'addressLine2'
@@ -64,14 +64,14 @@ class ViewModel extends BaseViewModel {
   constructor (data, err) {
     super(data, err)
 
-    this.addField(FIRST_NAME_KEY, FIRST_NAME_LABEL, 'govuk-input--width-10')
-    this.addField(LAST_NAME_KEY, LAST_NAME_LABEL, 'govuk-input--width-10')
-    this.addField(ADDRESS_LINE_1_KEY, ADDRESS_LINE_1_LABEL, 'govuk-input--width-10')
-    this.addField(ADDRESS_LINE_2_KEY, `${ADDRESS_LINE_2_LABEL} (optional)`, 'govuk-input--width-20')
-    this.addField(TOWN_OR_CITY_KEY, TOWN_OR_CITY_LABEL, 'govuk-input--width-20')
-    this.addField(COUNTY_KEY, COUNTY_LABEL, 'govuk-input--width-10')
+    this.addField(FIRST_NAME_KEY, FIRST_NAME_LABEL, 'govuk-!-width-two-thirds')
+    this.addField(LAST_NAME_KEY, LAST_NAME_LABEL, 'govuk-!-width-two-thirds')
+    this.addField(ADDRESS_LINE_1_KEY, ADDRESS_LINE_1_LABEL)
+    this.addField(ADDRESS_LINE_2_KEY, `${ADDRESS_LINE_2_LABEL} (optional)`)
+    this.addField(TOWN_OR_CITY_KEY, TOWN_OR_CITY_LABEL, 'govuk-!-width-two-thirds')
+    this.addField(COUNTY_KEY, COUNTY_LABEL, 'govuk-!-width-two-thirds')
     this.addField(POSTCODE_KEY, POSTCODE_LABEL, 'govuk-input--width-10')
-    this.addField(EMAIL_KEY, EMAIL_LABEL, 'govuk-input--width-20', EMAIL_OPTIONS)
+    this.addField(EMAIL_KEY, EMAIL_LABEL, 'govuk-!-width-two-thirds', EMAIL_OPTIONS)
     this.addField(PHONENUMBER_KEY, `${PHONENUMBER_LABEL} (optional)`, 'govuk-input--width-10', PHONENUMBER_OPTIONS)
   }
 }
