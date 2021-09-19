@@ -9,6 +9,12 @@ async function createServer () {
       validate: {
         options: {
           abortEarly: false
+          // errors: {
+          //   wrap: {
+          //     label: false,
+          //     array: false
+          //   }
+          // }
         }
       }
     },

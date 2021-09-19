@@ -29,7 +29,9 @@ class ViewModel extends BaseViewModel {
       })),
       fieldset: {
         legend: {
-          text: STRENGTH_LABEL
+          text: STRENGTH_LABEL,
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--l'
         }
       }
     }

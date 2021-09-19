@@ -18,7 +18,7 @@ class ViewModel extends BaseViewModel {
   constructor (data, err) {
     super(data, err)
 
-    this.addField(LOCATION_KEY, LOCATION_LABEL, null, LOCATION_OPTIONS)
+    this.addField(LOCATION_KEY, { text: LOCATION_LABEL, classes: 'govuk-label--l', isPageHeading: true }, null, LOCATION_OPTIONS)
   }
 }
 
