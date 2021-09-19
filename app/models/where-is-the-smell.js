@@ -11,7 +11,7 @@ const LOCATION_OPTIONS = {
 }
 
 const schema = joi.object().keys({
-  [LOCATION_KEY]: joi.string().max(LOCATION_LENGTH).label(LOCATION_LABEL).required()
+  [LOCATION_KEY]: joi.string().max(LOCATION_LENGTH).label(LOCATION_LABEL).trim().required()
 }).options(schemaOptions).required()
 
 class ViewModel extends BaseViewModel {
