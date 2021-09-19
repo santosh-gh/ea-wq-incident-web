@@ -35,7 +35,7 @@ const EMAIL_LABEL = 'Email address'
 const EMAIL_LENGTH = 100
 const EMAIL_OPTIONS = {
   hint: {
-    text: '(To receive your reference number)'
+    text: 'To receive your reference number'
   }
 }
 
@@ -44,7 +44,7 @@ const PHONENUMBER_LABEL = 'Phone number'
 const PHONENUMBER_LENGTH = 20
 const PHONENUMBER_OPTIONS = {
   hint: {
-    text: '(as an alternative to an email address in case we need to contact you)'
+    text: 'As an alternative to an email address in case we need to contact you'
   }
 }
 
