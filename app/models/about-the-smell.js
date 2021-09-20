@@ -10,7 +10,7 @@ const STRENGTH_ITEMS = [
   'Noticeable smell (a smell you notice while breathing normally)',
   'Distinct smell (a smell that might make your hair and clothes smell)',
   'Overwhelming smell (a smell that makes you want to leave the area)',
-  'Intolerable smell (a smell that forces you to hold your breath and leave the area) '
+  'Intolerable smell (a smell that forces you to hold your breath and leave the area)'
 ]
 
 const schema = joi.object().keys({
