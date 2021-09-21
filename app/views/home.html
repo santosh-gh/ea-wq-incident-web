@@ -5,31 +5,33 @@
 
 {% block twoThirds %}
 <div id="home-page">
-  <h1 class="govuk-heading-l">Report smells from Walleys Quarry landfill site</h1>
+  <h1 class="govuk-heading-l">Report a smell from Walleys Quarry landfill site</h1>
 
   <p class="govuk-body-l">Walleys Quarry Landfill Site Incident Reporting Form</p>
 
   <p class="govuk-body">
-    The Environment Agency provides weekly <a class="govuk-link" href="https://consult.environment-agency.gov.uk/west-midlands/walleys-quarry-landfill-sliverdale/" target="_blank" rel="noopener">updates on Walleys Quarry</a>.
+    The Environment Agency provides weekly updates on Walleys Quarry via its <a class="govuk-link" href="https://consult.environment-agency.gov.uk/west-midlands/walleys-quarry-landfill-sliverdale/" target="_blank" rel="noopener">Citizen Space website</a>.
+  </p>
+
+  <p class="govuk-body">To subscribe to receive these updates directly, please contact the West Midlands Enquiries Team at: <a class="govuk-link" href="mailto:Enquiries_WestMids@environment-agency.gov.uk">Enquiries_WestMids@environment-agency.gov.uk</a>. You can unsubscribe at any time.</p>
+
+  <p class="govuk-body">
+    If you still wish to report the smell from Walleys Quarry after reading these updates, please use this data capture form.
   </p>
 
   <p class="govuk-body">
-    If you still wish to report the smell from Walleys Quarry after reading the updates, use this data capture form.
+    Completing the short set of questions within this form will help us to understand how Walleys Quarry landfill site affects you.
   </p>
 
   <p class="govuk-body">
-    Completing the short set of questions within this form will help us understand how Walleys Quarry landfill site affects you.
-  </p>
-
-  <p class="govuk-body">
-    You can subscribe to receive updates, contact: <a class="govuk-link" href="mailto:Enquiries_WestMids@environment-agency.gov.uk">Enquiries_WestMids@environment-agency.gov.uk</a>. You can unsubscribe at any time.
+    All reports are logged, and a unique reference number will be generated for each report. This number will be sent to you immediately after completion of this form, if you provide us with a valid email address.
   </p>
 
   {{ govukButton({
     classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
     href: "/about-you",
     isStartButton: true,
-    text: "Next"
+    text: "Start"
   }) }}
 </div>
 {% endblock %}

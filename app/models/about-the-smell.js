@@ -4,13 +4,13 @@ const { BaseViewModel, schemaOptions } = require('./form')
 const STRENGTH_KEY = 'strength'
 const STRENGTH_LABEL = 'How strong is the smell?'
 const STRENGTH_ITEMS = [
-  'no smell',
-  'very weak smell',
-  'distinct smell that may make your hair or clothes smell',
-  'distinct smell you notice while walking and breathing normally',
-  'strong smell that may make your hair or clothes smell',
-  'very strong smell that makes you want to leave the area',
-  'extremely strong or intolerable smell that makes you hold your breath and leave the area'
+  'No smell',
+  'Very slight smell',
+  'Slight smell',
+  'Noticeable smell (a smell you notice while breathing normally)',
+  'Distinct smell (a smell that might make your hair and clothes smell)',
+  'Overwhelming smell (a smell that makes you want to leave the area)',
+  'Intolerable smell (a smell that forces you to hold your breath and leave the area)'
 ]
 
 const schema = joi.object().keys({
@@ -29,7 +29,9 @@ class ViewModel extends BaseViewModel {
       })),
       fieldset: {
         legend: {
-          text: STRENGTH_LABEL
+          text: STRENGTH_LABEL,
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--l'
         }
       }
     }

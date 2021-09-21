@@ -11,14 +11,14 @@ const LOCATION_OPTIONS = {
 }
 
 const schema = joi.object().keys({
-  [LOCATION_KEY]: joi.string().max(LOCATION_LENGTH).label(LOCATION_LABEL).required()
+  [LOCATION_KEY]: joi.string().max(LOCATION_LENGTH).label(LOCATION_LABEL).trim().required()
 }).options(schemaOptions).required()
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
     super(data, err)
 
-    this.addField(LOCATION_KEY, LOCATION_LABEL, null, LOCATION_OPTIONS)
+    this.addField(LOCATION_KEY, { text: LOCATION_LABEL, classes: 'govuk-label--l', isPageHeading: true }, null, LOCATION_OPTIONS)
   }
 }
 

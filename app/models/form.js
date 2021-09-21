@@ -47,9 +47,7 @@ class BaseViewModel {
     this.registerField(key, Object.assign({
       id: key,
       name: key,
-      label: {
-        text: label
-      },
+      label: typeof label === 'string' ? { text: label } : label,
       value: this.data[key],
       errorMessage: this.errors?.[key],
       classes: classes

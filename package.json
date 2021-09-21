@@ -1,8 +1,8 @@
 {
   "name": "ea-incident-form-web",
-  "version": "0.1.12",
-  "description": "description-of-project-goes-here",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "version": "0.1.13",
+  "description": "Report a smell at Walleys Quarry service",
+  "homepage": "https://github.com/DEFRA/ea-wq-incident-web",
   "main": "app/index.js",
   "scripts": {
     "build": "webpack",

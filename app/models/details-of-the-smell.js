@@ -19,7 +19,7 @@ const TIME_OPTIONS = {
 }
 
 const schema = joi.object().keys({
-  [DESCRIPTION_KEY]: joi.string().max(DESCRIPTION_LENGTH).label(DESCRIPTION_LABEL).required().allow(''),
+  [DESCRIPTION_KEY]: joi.string().max(DESCRIPTION_LENGTH).label(DESCRIPTION_LABEL).trim().required().allow(''),
   [DATE_KEY]: joi.date().less('now').label(DATE_LABEL).required(),
   [TIME_KEY]: joi.string().regex(TIME_PATTERN).label(TIME_LABEL).required()
 }).options(schemaOptions).required()
