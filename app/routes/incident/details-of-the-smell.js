@@ -1,5 +1,6 @@
 const sessionHandler = require('../../services/session-handler')
 const { schema, ViewModel } = require('../../models/details-of-the-smell')
+const sendEmail = require('../../util/send-email')
 
 module.exports = [
   {
@@ -15,10 +16,20 @@ module.exports = [
   {
     method: 'POST',
     path: '/details-of-the-smell',
-    handler: (request, h) => {
+    handler: async (request, h) => {
       sessionHandler.update(request, 'complaint', request.payload)
 
-      return h.redirect('/confirmation')
+      try {
+        const complaint = sessionHandler.get(request, 'complaint')
+
+        await sendEmail(complaint)
+
+        sessionHandler.set(request, 'complaint', { emailSent: true })
+
+        return h.redirect('/confirmation')
+      } catch (err) {
+        return h.redirect('/about-you')
+      }
     },
     options: {
       validate: {
