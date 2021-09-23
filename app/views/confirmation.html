@@ -1,12 +1,15 @@
 {% extends "two-thirds.html" %}
 
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
 {% set mainClasses = "govuk-main-wrapper--auto-spacing" %}
 
-{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% set pageHeading = "Submission Complete" %}
+{% set pageTitle = pageHeading + " - " + pageTitle %}
 
 {% block twoThirds %}
   {{ govukPanel({
-    titleText: "Submission Complete"
+    titleText: pageHeading
   }) }}
 
   <p class="govuk-body">Thank you for submitting your report.</p>

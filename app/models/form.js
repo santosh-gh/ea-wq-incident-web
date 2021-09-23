@@ -30,12 +30,13 @@ const schemaOptions = {
 }
 
 class BaseViewModel {
-  constructor (data, err) {
+  constructor (data, err, pageHeading) {
     const [errors, errorList] = mapErrors(err)
     this.data = data
     this.errors = errors
     this.errorList = errorList
     this.fields = {}
+    this.pageHeading = pageHeading
   }
 
   registerField (key, config) {

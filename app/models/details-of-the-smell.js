@@ -26,7 +26,7 @@ const schema = joi.object().keys({
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
-    super(data, err)
+    super(data, err, 'Details of the smell')
 
     const date = this.data[DATE_KEY]
     if (date) {

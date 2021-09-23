@@ -3,10 +3,11 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
+{% set pageTitle = pageHeading + " - " + pageTitle %}
 {% set formSubmitButtonText = "Submit" %}
 
 {% block beforeForm %}
-  <h1 class="govuk-heading-l">Details of the smell</h1>
+  <h1 class="govuk-heading-l">{{ pageHeading }}</h1>
 {% endblock %}
 
 {% block form %}

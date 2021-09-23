@@ -2,6 +2,8 @@
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+{% set pageTitle = pageHeading + " - " + pageTitle %}
+
 {% block form %}
   <div id="is-the-smell-at-home">
     {{ govukRadios(fields.atHome) }}
