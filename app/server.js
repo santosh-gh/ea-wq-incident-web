@@ -6,6 +6,7 @@ async function createServer () {
   const server = hapi.server({
     port: config.port,
     routes: {
+      security: true,
       validate: {
         options: {
           abortEarly: false
@@ -25,6 +26,7 @@ async function createServer () {
 
   // Register the plugins
   await server.register(require('@hapi/inert'))
+  await server.register(require('@hapi/crumb'))
   await server.register(require('./plugins/logging'))
   await server.register(require('./plugins/views'))
   await server.register(require('./plugins/session-cache'))
