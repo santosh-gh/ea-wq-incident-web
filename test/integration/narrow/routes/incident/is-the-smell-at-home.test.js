@@ -26,11 +26,7 @@ describe('Feedback test', () => {
       method: 'POST',
       url: '/is-the-smell-at-home',
       payload: {
-        atHome: 'No',
-        crumb: 'xyz'
-      },
-      headers: {
-        cookie: 'crumb=xyz'
+        atHome: 'No'
       }
     }
 
@@ -44,11 +40,7 @@ describe('Feedback test', () => {
       method: 'POST',
       url: '/is-the-smell-at-home',
       payload: {
-        atHome: 'Yes',
-        crumb: 'xyz'
-      },
-      headers: {
-        cookie: 'crumb=xyz'
+        atHome: 'Yes'
       }
     }
 
