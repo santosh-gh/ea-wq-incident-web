@@ -2,8 +2,6 @@
 
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-{% set pageTitle = pageHeading + " - " + pageTitle %}
-
 {% block form %}
   <div id="where-is-the-smell">
     {{ govukTextarea(fields.location) }}

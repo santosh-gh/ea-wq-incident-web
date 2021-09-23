@@ -1,3 +1,5 @@
+const config = require('../config')
+
 function mapErrors (err) {
   if (err && Array.isArray(err.details)) {
     const errors = {}
@@ -37,6 +39,7 @@ class BaseViewModel {
     this.errorList = errorList
     this.fields = {}
     this.pageHeading = pageHeading
+    this.pageTitle = `${errors ? 'Error: ' : ''}${pageHeading} - ${config.defaultPageTitle}`
   }
 
   registerField (key, config) {
