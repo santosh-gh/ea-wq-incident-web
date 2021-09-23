@@ -9,7 +9,8 @@ async function createServer () {
       security: true,
       validate: {
         options: {
-          abortEarly: false
+          abortEarly: false,
+          stripUnknown: true
           // errors: {
           //   wrap: {
           //     label: false,

@@ -62,7 +62,11 @@ const schema = joi.object().keys({
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
-    super(data, err, 'About you')
+    super(data, err, {
+      pageHeading: 'About you',
+      path: '/about-you',
+      previousPath: '/'
+    })
 
     this.addField(FIRST_NAME_KEY, FIRST_NAME_LABEL, 'govuk-!-width-two-thirds')
     this.addField(LAST_NAME_KEY, LAST_NAME_LABEL, 'govuk-!-width-two-thirds')

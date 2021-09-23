@@ -12,7 +12,11 @@ const schema = joi.object().keys({
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
-    super(data, err, AT_HOME_LABEL)
+    super(data, err, {
+      pageHeading: AT_HOME_LABEL,
+      path: '/is-the-smell-at-home',
+      previousPath: '/about-the-smell'
+    })
 
     const atHomeOptions = {
       items: AT_HOME_ITEMS.map((value, index) => ({

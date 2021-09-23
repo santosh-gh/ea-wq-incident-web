@@ -16,7 +16,11 @@ const schema = joi.object().keys({
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
-    super(data, err, LOCATION_LABEL)
+    super(data, err, {
+      pageHeading: LOCATION_LABEL,
+      path: '/where-is-the-smell',
+      previousPath: '/is-the-smell-at-home'
+    })
 
     this.addField(LOCATION_KEY, { text: LOCATION_LABEL, classes: 'govuk-label--l', isPageHeading: true }, null, LOCATION_OPTIONS)
   }

@@ -32,7 +32,7 @@ const schemaOptions = {
 }
 
 class BaseViewModel {
-  constructor (data, err, pageHeading) {
+  constructor (data, err, { pageHeading, path, previousPath }) {
     const [errors, errorList] = mapErrors(err)
     this.data = data
     this.errors = errors
@@ -40,6 +40,8 @@ class BaseViewModel {
     this.fields = {}
     this.pageHeading = pageHeading
     this.pageTitle = `${errors ? 'Error: ' : ''}${pageHeading} - ${config.defaultPageTitle}`
+    this.path = path
+    this.previousPath = previousPath
   }
 
   registerField (key, config) {
