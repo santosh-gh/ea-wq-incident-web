@@ -31,7 +31,7 @@ module.exports = {
     },
     path: ['../views'],
     relativeTo: __dirname,
-    isCached: !config.isDev,
+    isCached: config.isProd,
     context: {
       appVersion: version,
       assetPath: '/static',
