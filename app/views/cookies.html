@@ -1,20 +1,9 @@
 {% extends "two-thirds.html" %}
 
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pageHeading = "Cookies" %}
 {% set pageTitle = pageHeading + " - " + pageTitle %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "/"
-      }]
-  }) }}
-{% endblock %}
 
 {% block twoThirds %}
   <h2 class="govuk-heading-l">{{ pageHeading }}</h2>

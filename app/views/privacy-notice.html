@@ -1,20 +1,7 @@
 {% extends "two-thirds.html" %}
 
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
 {% set pageHeading = "Privacy notice: " + serviceName %}
 {% set pageTitle = pageHeading + " - GOV.UK" %}
-
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "/"
-      }]
-  }) }}
-{% endblock %}
 
 {% block content %}
 <div id="privacy-notice">
