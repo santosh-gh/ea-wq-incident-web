@@ -20,6 +20,7 @@ describe('Feedback test', () => {
     const response = await server.inject(options)
     expect(response.statusCode).toBe(200)
   })
+
   test('POST /is-the-smell-at-home route with \'No\' response redirects to where is the smell', async () => {
     const options = {
       method: 'POST',
@@ -33,6 +34,7 @@ describe('Feedback test', () => {
     expect(response.statusCode).toBe(302)
     expect(response.headers.location).toBe('/where-is-the-smell')
   })
+
   test('POST /is-the-smell-at-home route with \'Yes\' response redirects to details-of-the-smell', async () => {
     const options = {
       method: 'POST',

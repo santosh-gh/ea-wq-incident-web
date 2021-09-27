@@ -31,13 +31,13 @@ module.exports = {
     },
     path: ['../views'],
     relativeTo: __dirname,
-    isCached: !config.isDev,
+    isCached: config.isProd,
     context: {
       appVersion: version,
       assetPath: '/static',
       govukAssetPath: '/assets',
-      serviceName: 'Report a smell at Walleys Quarry',
-      pageTitle: 'Report a smell at Walleys Quarry - GOV.UK',
+      serviceName: config.serviceName,
+      pageTitle: config.defaultPageTitle,
       noIndex: true // stop robot crawl by default
     }
   }

@@ -1,3 +1,5 @@
+const config = require('../config')
+
 function mapErrors (err) {
   if (err && Array.isArray(err.details)) {
     const errors = {}
@@ -30,12 +32,16 @@ const schemaOptions = {
 }
 
 class BaseViewModel {
-  constructor (data, err) {
+  constructor (data, err, { pageHeading, path, previousPath }) {
     const [errors, errorList] = mapErrors(err)
     this.data = data
     this.errors = errors
     this.errorList = errorList
     this.fields = {}
+    this.pageHeading = pageHeading
+    this.pageTitle = `${errors ? 'Error: ' : ''}${pageHeading} - ${config.defaultPageTitle}`
+    this.path = path
+    this.previousPath = previousPath
   }
 
   registerField (key, config) {

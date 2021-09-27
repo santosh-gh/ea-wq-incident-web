@@ -4,11 +4,12 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
+{% set formAction = path %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    classes: "nojs-hidden",
-    href: "javascript:history.back()"
+    href: previousPath
   }) }}
 {% endblock %}
 
@@ -27,6 +28,7 @@
 
   <form id="form" method="post" action="{{formAction | default('')}}"
     novalidate enctype="{{formEncType | default('application/x-www-form-urlencoded')}}">
+
     {% block form %}
     {% endblock %}
 

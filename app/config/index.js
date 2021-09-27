@@ -52,8 +52,11 @@ if (result.error) {
 const value = result.value
 
 // Add some helper props
-value.isDev = (value.env === 'development' || value.env === 'test')
+value.isDev = value.env === 'development'
 value.isTest = value.env === 'test'
 value.isProd = value.env === 'production'
+
+value.serviceName = 'Report a smell at Walleys Quarry'
+value.defaultPageTitle = `${value.serviceName} - GOV.UK`
 
 module.exports = value

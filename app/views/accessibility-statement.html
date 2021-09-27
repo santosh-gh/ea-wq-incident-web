@@ -1,24 +1,13 @@
 {% extends "two-thirds.html" %}
 
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{% set pageTitle = "Accessibility statement for the " + serviceName + " service" %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "/"
-      }]
-  }) }}
-{% endblock %}
+{% set pageHeading = "Accessibility statement for the " + serviceName + " service" %}
+{% set pageTitle = pageHeading + " - GOV.UK" %}
 
 {% block content %}
 <div id="accessibility-statement">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+      <h1 class="govuk-heading-xl">{{ pageHeading }}</h1>
 
       <p class="govuk-body">This accessibility statement applies to the {{ serviceName }} service.</p>
       <p class="govuk-body">

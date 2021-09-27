@@ -6,9 +6,11 @@ async function createServer () {
   const server = hapi.server({
     port: config.port,
     routes: {
+      security: true,
       validate: {
         options: {
-          abortEarly: false
+          abortEarly: false,
+          stripUnknown: true
           // errors: {
           //   wrap: {
           //     label: false,

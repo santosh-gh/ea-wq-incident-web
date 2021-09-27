@@ -4,7 +4,7 @@ const { BaseViewModel, schemaOptions } = require('./form')
 const AT_HOME_KEY = 'atHome'
 const AT_HOME_LABEL = 'Are you experiencing this smell at your home address?'
 const AT_HOME_ITEMS = ['Yes', 'No']
-const AT_HOME_ITEM_LABELS = ['Yes - the smell is at home', 'No - the smell is not at home']
+const AT_HOME_ITEM_LABELS = ['Yes - the smell is at home', 'No']
 
 const schema = joi.object().keys({
   [AT_HOME_KEY]: joi.string().label(AT_HOME_LABEL).allow(...AT_HOME_ITEMS).required()
@@ -12,7 +12,11 @@ const schema = joi.object().keys({
 
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
-    super(data, err)
+    super(data, err, {
+      pageHeading: AT_HOME_LABEL,
+      path: '/is-the-smell-at-home',
+      previousPath: '/about-the-smell'
+    })
 
     const atHomeOptions = {
       items: AT_HOME_ITEMS.map((value, index) => ({
