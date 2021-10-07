@@ -34,6 +34,40 @@ describe('Experience test', () => {
     expect(response.statusCode).toBe(200)
   })
 
+  test('POST /details-of-the-smell route returns 200 if time is in the future', async () => {
+    const today = new Date()
+    const tomorrow = new Date()
+    tomorrow.setDate(today.getDate() + 1)
+
+    const options = {
+      method: 'POST',
+      url: '/details-of-the-smell',
+      payload: {
+        date: today,
+        hour: 23,
+        minute: 59
+      }
+    }
+
+    const response = await server.inject(options)
+    expect(response.statusCode).toBe(200)
+  })
+
+  test('POST /details-of-the-smell route returns 200 if time is incorrect', async () => {
+    const options = {
+      method: 'POST',
+      url: '/details-of-the-smell',
+      payload: {
+        date: '2021-08-25',
+        hour: 14,
+        minute: 61
+      }
+    }
+
+    const response = await server.inject(options)
+    expect(response.statusCode).toBe(200)
+  })
+
   test('POST /details-of-the-smell route returns 302', async () => {
     mockSession = {
       firstName: 'Mr',
@@ -58,7 +92,7 @@ describe('Experience test', () => {
       method: 'POST',
       url: '/details-of-the-smell',
       payload: {
-        date: new Date().toISOString(),
+        date: '2021-08-25',
         hour: 14,
         minute: 35
       }
