@@ -1,5 +1,5 @@
 const joi = require('joi')
-const dayjs = require('dayjs')
+const dayjs = require('../util/date-util')
 const { BaseViewModel, baseMessages } = require('./form')
 
 const DATE_KEY = 'date'
@@ -39,7 +39,7 @@ const schema = joi.object().keys({
 class ViewModel extends BaseViewModel {
   constructor (data, err) {
     super(data, err, {
-      pageHeading: 'Details of the smell',
+      pageHeading: 'When did you experience the smell?',
       path: '/details-of-the-smell',
       previousPath: '/description-of-the-smell'
     })
@@ -89,13 +89,17 @@ class ViewModel extends BaseViewModel {
           id: TIME_HOUR_KEY,
           classes: highlight('govuk-input--width-2', timeError || hourError),
           name: TIME_HOUR_KEY,
-          value: this.data[TIME_HOUR_KEY]
+          value: typeof this.data[TIME_HOUR_KEY] === 'number'
+            ? this.data[TIME_HOUR_KEY].toString().padStart(2, '0')
+            : this.data[TIME_HOUR_KEY]
         },
         {
           id: TIME_MINUTE_KEY,
           classes: highlight('govuk-input--width-2', timeError || minuteError),
           name: TIME_MINUTE_KEY,
-          value: this.data[TIME_MINUTE_KEY]
+          value: typeof this.data[TIME_MINUTE_KEY] === 'number'
+            ? this.data[TIME_MINUTE_KEY].toString().padStart(2, '0')
+            : this.data[TIME_MINUTE_KEY]
         }
       ],
       errorMessage
@@ -107,9 +111,7 @@ class ViewModel extends BaseViewModel {
 
   getDateOptions () {
     const dateItems = [...Array(7)].map((_, i) => {
-      const d = new Date()
-      d.setDate(d.getDate() - i)
-      return dayjs(d)
+      return dayjs.tz(dayjs().subtract(i, 'day'), 'Europe/London')
     })
 
     const date = this.data[DATE_KEY]
@@ -128,7 +130,7 @@ class ViewModel extends BaseViewModel {
         }
 
         const checked = date
-          ? value === dayjs(date).format('YYYY-MM-DD')
+          ? value === dayjs.tz(date, 'Europe/London').format('YYYY-MM-DD')
           : false
 
         return { text, value, checked }
