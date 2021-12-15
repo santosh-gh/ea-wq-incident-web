@@ -3,6 +3,10 @@
 A digital service to enable complaints about Environment Agency incidents to be registered. 
 This is the web front end for the application.
 
+The service gathers information using a GDS Style form, and emails the resultant details to the specified address.
+To run the service locally a suitable [GOV.UK Notify](https://www.notifications.service.gov.uk) service account is required. 
+See the [Environment Variables](#environment-variables) section for further details.
+
 ## Prerequisites
 
 - Docker
@@ -20,8 +24,11 @@ values for production-like deployments are set in the Helm chart and may be
 overridden by build and release pipelines.
 
 | Name                           | Description                               | Required  | Default            | Valid                       
-| ----                           | -----------                               | :-------: | -------            | -----                       
-| COOKIE_PASSWORD                | Cookie password                     | yes       |                    |                             
+| ----                           | -----------                               | :-------: | -------            | -----   
+| EMAIL_TO_ADDRESS               | Email address to receive incident details | yes       | NA                 | any valid email address
+| NOTIFY_API_KEY                 | Api key for [GOV.UK Notify](https://www.notifications.service.gov.uk)      | yes       | NA                 |
+| NOTIFY_TEMPLATE_ID             | ID of Notify template                     | yes       | NA                 | The template is expecting the following fields: `firstName, lastName, addressLine1, addressLine2, townOrCity, county, postcode, email, phonenumber, strength, atHome, location, description, date, hour, minute` |
+| COOKIE_PASSWORD                | Cookie password                           | yes       | NA                 |                             
 | NODE_ENV                       | Node environment                          | no        | development        | development,test,production 
 | PORT                           | Port number                               | no        | 3000               |                             
 | STATIC_CACHE_TIMEOUT_IN_MILLIS | static file cache timeout                 | no        | 54000 (15 minutes) |                             
@@ -90,6 +97,13 @@ configured to receive at the below end points.
 Readiness: `/healthy`
 Liveness: `/healthz`
 
+## Service down page
+
+The repository includes a [Service Down](./service-down/down.html) place holder page which is displayed by the F5 Silverline WAF when the site is unavailable. The file meets Silverline's guidelines of a small standalone page of less that 51200 bytes.
+
+**Note:** the page includes special formatting for Silverline's support ID - `<%TS.request.ID()%>`. 
+This ensures that blocked requests can be identified.
+
 ## Licence
 
 THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT
@@ -112,3 +126,4 @@ open licence.
 
 It is designed to encourage use and re-use of information freely and flexibly,
 with only a few conditions.
+
